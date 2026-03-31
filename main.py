@@ -1,12 +1,10 @@
 from fastapi import FastAPI
+from routers.calculator_router import router as calculator_router
 
-app = FastAPI(title="Calculator API")
+app = FastAPI(
+    title="Calculator API",
+    description="API que realiza operações matemáticas básicas",
+    version="1.0.0"
+)
 
-API_PREFIX =  "/api"
-
-@app.get("/")
-def healt_check():
-    return {
-        "stauts": "ok",
-        "message": "Calculator API running..."
-    }
+app.include_router(calculator_router)
