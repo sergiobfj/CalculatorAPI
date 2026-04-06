@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 from typing import Literal
 
-
 class OperationRequest(BaseModel):
     a: float
     b: float
